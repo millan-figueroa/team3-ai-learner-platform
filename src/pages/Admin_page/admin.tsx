@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, BookOpen, DollarSign, AlertCircle } from 'lucide-react';
+import { Users, BookOpen, Calendar, Inbox, TrendingUp } from 'lucide-react';
 
 interface StatCardProps {
   title: string;
@@ -109,17 +109,17 @@ const AdminDashboard: React.FC = () => {
             trendUp={true}
           />
           <StatCard
-            title="Revenue (MTD)"
-            value="$24,580"
-            icon={<DollarSign size={32} />}
-            trend="15% from last month"
+            title="Manage Calendar"
+            value="23"
+            icon={<Calendar size={32} />}
+            trend="Events this week"
             trendUp={true}
           />
           <StatCard
-            title="Pending Issues"
-            value="8"
-            icon={<AlertCircle size={32} />}
-            trend="3 resolved today"
+            title="View Inbox"
+            value="15"
+            icon={<Inbox size={32} />}
+            trend="5 unread messages"
             trendUp={false}
           />
         </div>
