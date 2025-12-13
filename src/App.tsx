@@ -1,4 +1,5 @@
 import "./index.css";
+import AdminDashboard from "./pages/Admin_page/admin";
 import Alumni from "./pages/Alumni/alumni";
 import LandingPage from "./pages/LandingPage";
 import Learner from './pages/Learner/learner';
@@ -12,6 +13,9 @@ function App() {
   
   // Check if current route is learner page
   const isLearnerRoute = currentPath.startsWith('/learner-');
+
+  // Check if current route is admin page
+  const isAdminRoute = currentPath.startsWith('/admin-');
   
   // Extract username from alumni route
   const getAlumniUsername = (): string | undefined => {
@@ -29,6 +33,14 @@ function App() {
     return undefined;
   };
 
+  // Extract username from admin route
+  const getAdminUsername = (): string | undefined => {
+    if (isAdminRoute) {
+      return currentPath.replace('/admin-', '').replace(/-/g, ' ');
+    }
+    return undefined;
+  };
+
   console.log("current path", currentPath);
 
   return (
@@ -37,6 +49,8 @@ function App() {
         <Alumni username={getAlumniUsername()} />
       ) : isLearnerRoute ? (
         <Learner username={getLearnerUsername()} />
+      ) : isAdminRoute ? (
+        <AdminDashboard />
       ) : (
         <LandingPage />
       )}
