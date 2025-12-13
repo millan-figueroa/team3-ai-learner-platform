@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Per Scholas Hackathon 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Challenge Brief: PeerTrack+ — The AI-Powered Tutoring & Support Network
 
-Currently, two official plugins are available:
+### Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Welcome to the 2025 Per Scholas Hackathon!  
+This year’s challenge combines two of our strongest community values — mentorship and innovation.
 
-## React Compiler
+Your mission is to design and prototype a platform that brings AI and human connection together to help learners succeed beyond the classroom.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**PeerTrack+** is an AI-powered tutoring and mentorship platform where alumni and current learners collaborate, share knowledge, and grow together.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### The Challenge
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Per Scholas wants to strengthen the bridge between graduates and current learners by creating a smart, gamified tutoring system that:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Recognizes alumni for giving back
+- Helps learners get support faster and more effectively
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Goal:** Design a solution that pairs AI tools with human mentorship to make tutoring more accessible, personalized, and rewarding.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### What Your Solution Should Include
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### 1. Alumni & Learner Connection
+
+- Alumni can sign up as tutors, list skills, and offer sessions.
+- Learners can request help, ask questions, or schedule tutoring time.
+- Interfaces: **Admin view / Learner view / Tutor view**
+
+#### 2. AI Integration
+
+AI assists tutors and learners with features such as:
+
+- Smart matching between learners and tutors
+- AI study assistant or chatbot providing hints, summaries, or prep materials
+- AI dashboard showing trends, learner progress, or suggested learning paths
+
+#### 3. Gamification & Motivation
+
+- Points, badges, or leaderboards for tutoring sessions and learning milestones
+- Experience levels or ranks that reward ongoing participation
+
+#### 4. User-Friendly & Inclusive Design
+
+- Intuitive interface accessible to users of all tech levels
+- Scalable and sustainable architecture that can grow with the alumni network

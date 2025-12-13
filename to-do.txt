@@ -1,0 +1,44 @@
+Here's a todo list from the instructions, add your dev tasks here so we can all see progress!
+
+PeerTrack+ Hackathon Planning Todo List
+
+1. Deliverables Planning
+[ ] Decide format: mockup, prototype, or concept demo
+[ ] Outline 7–10 minute presentation / pitch
+[ ] Draft optional future roadmap (future improvements / AI integrations)
+[ ] Prepare README.md with project overview, features, and design notes
+
+2. Mockup / Prototype
+[ ] Identify main user roles: Learner, Mentor, Admin
+[ ] Sketch dashboards for each role
+    [ ] Learner: AI chat, mentor suggestions, session history
+    [ ] Mentor: incoming requests, points/badges, optional Q&A
+    [ ] Admin: leaderboard, session oversight (simplified)
+[ ] Decide which features are in MVP vs. future roadmap
+[ ] Plan AI integration for chat, smart matching, and session summaries
+
+3. Presentation / Pitch
+[ ] Define problem statement: challenges learners and alumni face
+[ ] Describe solution: AI + human mentorship flow
+[ ] Highlight impact: accessibility, personalization, engagement
+[ ] Show alignment with Per Scholas mission (equity, community, continuous learning)
+[ ] Prepare visuals / demo screens to illustrate main features
+[ ] Draft script and time allocation for 7–10 minutes
+
+4. Concept & Design Considerations
+[ ] Decide how AI assists without replacing human mentors
+[ ] Gamification plan: points, badges, ranks
+[ ] UX / UI principles: intuitive, inclusive, accessible
+[ ] Sustainability & scalability ideas for alumni network growth
+[ ] Define how learners get instant help while still connecting with mentors
+
+5. Key Questions to Address
+[ ] How AI improves mentorship effectiveness
+[ ] How to keep alumni motivated to give back regularly
+[ ] How learners get immediate support plus mentor guidance
+[ ] How design remains sustainable and scalable across network
+
+6. Coordination & Team Workflow
+[ ] Assign roles for mockups, presentation, research, and design
+[ ] Set timeline for weekend development / prototype
+[ ] Decide which features to implement for MVP vs. future roadmap
