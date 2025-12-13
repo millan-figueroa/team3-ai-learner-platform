@@ -8,7 +8,6 @@ function App() {
 
   // Check if current route is alumni page
   const isAlumniRoute = currentPath.startsWith("/alumni-");
-  const isLandingPreview = currentPath === "/landing-preview";
   
   // Check if current route is learner page
   const isLearnerRoute = currentPath.startsWith('/learner-');
