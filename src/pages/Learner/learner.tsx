@@ -72,7 +72,7 @@ const Learner: React.FC<LearnerProps> = ({ username }) => {
         </section>
 
         {/* AI Chat Placeholder */}
-        <section className="bg-white rounded-xl shadow p-4">
+       {/* <section className="bg-white rounded-xl shadow p-4">
           <h2 className="text-lg font-semibold mb-2">AI Study Assistant</h2>
           <p className="text-gray-600 text-sm">
             Chat with AI for hints, explanations, and study help.
@@ -81,7 +81,7 @@ const Learner: React.FC<LearnerProps> = ({ username }) => {
           <div className="mt-4 h-48 flex items-center justify-center border rounded-lg text-gray-400">
             Chat UI coming soon
           </div>
-        </section>
+        </section> */}
       </div>
 
       {/* Active Requests */}

@@ -73,7 +73,7 @@ export default function LearnerDash() {
           </p>
 
           <div className="mt-4 h-48 flex items-center justify-center border rounded-lg text-gray-400">
-            Chat UI coming soon
+          
           </div>
         </section>
       </div>
