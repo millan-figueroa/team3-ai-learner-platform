@@ -15,8 +15,8 @@ const LandingPage: React.FC = () => {
           Register as a Student
         </button>
 
-        <button onClick={() => (window.location.href = "/signup/mentor")}>
-          Register as a Tutor
+        <button onClick={() => (window.location.href = "/signup/alumni")}>
+          Register as an Alumni
         </button>
       </div>
 
