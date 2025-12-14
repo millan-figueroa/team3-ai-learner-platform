@@ -1,5 +1,5 @@
 export interface Tab {
-  key: string;
+  id: string;
   label: string;
   icon: string;
 }

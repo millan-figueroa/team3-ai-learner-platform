@@ -54,13 +54,13 @@ const Learner: React.FC<LearnerProps> = ({ username }) => {
 
       {/* Layout */}
       <div className="flex w-full">
-        <NavBar
-          tabs={navigationConfig.learner.tabs}
+       <NavBar
+          tabs={tabs}
           activeTab={activeTab}
           onTabChange={setActiveTab}
           isCollapsed={isNavCollapsed}
           onToggleCollapse={() => setIsNavCollapsed(!isNavCollapsed)}
-        />
+      />
 
         {/* Main Content */}
         <div className="flex-1 w-full p-6">{renderContent()}</div>
