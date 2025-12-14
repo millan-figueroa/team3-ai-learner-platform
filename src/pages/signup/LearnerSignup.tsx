@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 
 export type LearnerSignupForm = {
   fullName: string;
@@ -25,8 +25,6 @@ export default function LearnerSignup({ onNext }: Props) {
 
   const [errors, setErrors] = useState<FieldErrors>({});
   const [showPw, setShowPw] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  // const [serverMessage, setServerMessage] = useState<string | null>(null);
 
   const isValidEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
@@ -50,72 +48,46 @@ export default function LearnerSignup({ onNext }: Props) {
     return next;
   };
 
-  const canSubmit = useMemo(() => {
-    const e = validate(form);
-    return Object.keys(e).length === 0 && !isSubmitting;
-  }, [form, isSubmitting]);
+  // Optional: if you want to show a subtle hint
+  const hasErrors = useMemo(
+    () => Object.keys(validate(form)).length > 0,
+    [form]
+  );
 
-  //just updates local form state when user types, instead of saving to backend or create account its ready to pass to next step
   const onChange =
-    (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (key: keyof LearnerSignupForm) =>
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       setForm((prev) => ({ ...prev, [key]: e.target.value }));
       setErrors((prev) => ({ ...prev, [key]: undefined }));
     };
 
-  // replacing the original onsubmit from previous code to integrate with our auth flow and save registration info correctly
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     const validationErrors = validate(form);
     setErrors(validationErrors);
+
     if (Object.keys(validationErrors).length > 0) return;
 
     onNext(form);
   };
 
-  // async function onSubmit(e: React.FormEvent) {
-  //   e.preventDefault();
-  //   setServerMessage(null);
-
-  //   const nextErrors = validate(form);
-  //   setErrors(nextErrors);
-  //   if (Object.keys(nextErrors).length > 0) return;
-
-  //   setIsSubmitting(true);
-  //   try {
-  //     // ✅ Replace this with your real endpoint later
-  //     // Example:
-  //     // const res = await fetch("/api/auth/signup-Learner", { ... })
-
-  //     await new Promise((r) => setTimeout(r, 600)); // fake delay
-
-  //     setServerMessage("Account created! You can log in now.");
-  //     setForm({
-  //       fullName: "",
-  //       email: "",
-  //       password: "",
-  //       confirmPassword: "",
-  //       cohort: "",
-  //     });
-  //   } catch (err) {
-  //     setServerMessage("Signup failed. Please try again.");
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // }
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2 text-center">
           Learner Sign Up
         </h1>
+        <p className="text-center text-gray-600 mb-6">
+          Create your account to continue
+        </p>
+
         <form onSubmit={onSubmit} className="space-y-4">
           <div className="flex flex-col">
             <label className="mb-1 text-gray-700">Full Name</label>
             <input
               value={form.fullName}
               onChange={onChange("fullName")}
-              required
               className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             {errors.fullName && (
@@ -129,7 +101,6 @@ export default function LearnerSignup({ onNext }: Props) {
               value={form.email}
               onChange={onChange("email")}
               type="email"
-              required
               className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             {errors.email && (
@@ -154,7 +125,6 @@ export default function LearnerSignup({ onNext }: Props) {
                 value={form.password}
                 onChange={onChange("password")}
                 type={showPw ? "text" : "password"}
-                required
                 className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <button
@@ -176,7 +146,6 @@ export default function LearnerSignup({ onNext }: Props) {
               value={form.confirmPassword}
               onChange={onChange("confirmPassword")}
               type={showPw ? "text" : "password"}
-              required
               className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             {errors.confirmPassword && (
@@ -184,13 +153,19 @@ export default function LearnerSignup({ onNext }: Props) {
             )}
           </div>
 
+          {/* Button always clickable for demo; validation happens on submit */}
           <button
             type="submit"
-            disabled={!canSubmit}
-            className="w-full bg-linear-to-r from-purple-600 to-indigo-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md"
+            className="w-full bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md"
           >
             Next
           </button>
+
+          {hasErrors && (
+            <p className="text-xs text-gray-500 text-center">
+              Tip: use a real-looking email and an 8+ char password.
+            </p>
+          )}
         </form>
       </div>
     </div>

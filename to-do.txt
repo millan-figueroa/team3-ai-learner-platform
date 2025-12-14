@@ -42,3 +42,11 @@ PeerTrack+ Hackathon Planning Todo List
 [ ] Assign roles for mockups, presentation, research, and design
 [ ] Set timeline for weekend development / prototype
 [ ] Decide which features to implement for MVP vs. future roadmap
+
+availability 
+collaboration between students
+students can assign upvotes/ ranking
+tutor ranking - top tutor/ stuents that need help
+tutors can assign students grades adn ranking
+
+stretch goal
