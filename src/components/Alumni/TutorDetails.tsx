@@ -122,7 +122,7 @@ const TutorTopicItem = ({ topic }: { topic: TutorTopic }) => {
 };
 
 // Main Tutor Profile Component
-const TutorProfile = ({ tutor }: { tutor: TutorProps }) => {
+export const TutorProfile = ({ tutor }: { tutor: TutorProps }) => {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white">
       <div className="mb-6">
@@ -172,6 +172,6 @@ const TutorProfile = ({ tutor }: { tutor: TutorProps }) => {
 };
 
 // Export component with test data
-export default function App() {
-  return <TutorProfile tutor={testTutor1} />;
-}
+// export default function App() {
+//   return <TutorProfile tutor={testTutor1} />;
+// }

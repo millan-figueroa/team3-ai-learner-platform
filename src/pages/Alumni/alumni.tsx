@@ -8,6 +8,9 @@ import ScheduleTab from '../../components/Alumni/tabs/ScheduleTab';
 import ResourcesTab from '../../components/Alumni/tabs/ResourcesTab';
 import ProfileTab from '../../components/Alumni/tabs/ProfileTab';
 import navigationConfig from '../../data/navigationConfig.json';
+import { TutorProfile } from '../../components/Alumni/TutorDetails';
+
+import { testTutor1 } from '../../components/types/user-types';
 
 interface AlumniProps {
   username?: string;
@@ -17,7 +20,7 @@ const Alumni: React.FC<AlumniProps> = ({ username }) => {
   const [activeTab, setActiveTab] = useState(navigationConfig.alumni.defaultTab);
   const [isNavCollapsed, setIsNavCollapsed] = useState(false);
 
-  const tabs: Tab[] = navigationConfig.alumni.tabs;
+  //const tabs: Tab[] = navigationConfig.alumni.tabs;
 
   const renderContent = () => {
     switch (activeTab) {
@@ -31,6 +34,8 @@ const Alumni: React.FC<AlumniProps> = ({ username }) => {
         return <ResourcesTab />;
       case 'profile':
         return <ProfileTab />;
+      case "details":
+        return <TutorProfile tutor={testTutor1}/>;
       default:
         return (
           <div className="bg-white p-6 rounded-lg shadow">
@@ -50,7 +55,7 @@ const Alumni: React.FC<AlumniProps> = ({ username }) => {
       <div className="flex w-full">
         {/* Collapsible NavBar Component */}
         <NavBar 
-          tabs={tabs}
+          tabs={navigationConfig.alumni.tabs}
           activeTab={activeTab}
           onTabChange={setActiveTab}
           isCollapsed={isNavCollapsed}
