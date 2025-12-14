@@ -28,6 +28,18 @@ export default function LandingNav() {
         {/* right: login dropdown */}
         <div>
           <button onClick={() => setOpen((o) => !o)}>Login</button>
+
+          {open && (
+            <div>
+              <button onClick={() => navigate("/dashboard")}>Learner</button>
+
+              <button onClick={() => navigate("/alumni/dashboard")}>
+                Alumni
+              </button>
+
+              <button onClick={() => navigate("/admin")}>Admin</button>
+            </div>
+          )}
         </div>
       </div>
     </header>
