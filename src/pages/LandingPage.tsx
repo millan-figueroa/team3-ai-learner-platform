@@ -24,8 +24,9 @@ export default function LandingPage() {
           </h1>
 
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            A community-driven learning platform connecting learners with alumni
-            mentors through structured guidance and real-world experience.
+            A community-driven learning platform connecting learners with
+            alumnimentors through AI-powered assistance, intelligent matching,
+            and structured, real-world guidance.
           </p>
 
           {/* primary ctas */}
