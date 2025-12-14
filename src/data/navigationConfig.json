@@ -3,27 +3,27 @@
     "defaultTab": "dashboard",
     "tabs": [
       {
-        "id": "dashboard",
+        "key": "dashboard",
         "label": "Dashboard",
         "icon": "🏠"
       },
       {
-        "id": "mentoring",
+        "key": "mentoring",
         "label": "My Mentees",
         "icon": "👥"
       },
       {
-        "id": "schedule",
+        "key": "schedule",
         "label": "Schedule",
         "icon": "📅"
       },
       {
-        "id": "resources",
+        "key": "resources",
         "label": "Resources",
         "icon": "📚"
       },
       {
-        "id": "profile",
+        "key": "profile",
         "label": "Profile",
         "icon": "⚙️"
       }
@@ -38,27 +38,27 @@
     "defaultTab": "dashboard",
     "tabs": [
       {
-        "id": "dashboard",
+        "key": "dashboard",
         "label": "Dashboard",
         "icon": "🏠"
       },
       {
-        "id": "help",
+        "key": "help",
         "label": "Get Help",
         "icon": "💬"
       },
       {
-        "id": "schedule",
+        "key": "schedule",
         "label": "Schedule",
         "icon": "📅"
       },
       {
-        "id": "resources",
+        "key": "resources",
         "label": "Resources",
         "icon": "📚"
       },
       {
-        "id": "profile",
+        "key": "profile",
         "label": "Profile",
         "icon": "⚙️"
       }
