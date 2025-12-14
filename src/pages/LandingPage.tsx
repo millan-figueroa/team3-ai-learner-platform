@@ -1,14 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/hero1.jpg";
+import { GraduationCap, Users, LayoutList } from "lucide-react";
 
 export default function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 via-indigo-50 to-purple-100">
+    <div className="min-h-screen bg-linear-to-br from-blue-100 via-indigo-50 to-purple-200">
       {/* full-width white hero section */}
-      <section className="bg-white">
+      <section className="bg-slate-50">
         {/* full-width hero image */}
         <img
           src={heroImage}
@@ -49,32 +50,50 @@ export default function LandingPage() {
       {/* gap beneath the hero */}
       <div className="h-10 sm:h-14" />
 
-      {/* info sections */}
+      {/* info cards */}
       <div className="max-w-6xl mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-md p-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+        {/* learner card */}
+        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-md p-8 text-center">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-purple-600 to-indigo-600 my-4">
+            <GraduationCap className="h-7 w-7 text-white" />
+          </div>
+
+          <h3 className="text-xl font-semibold text-gray-900 my-3">
             For Learners
           </h3>
+
           <p className="text-gray-600">
             Get matched with alumni mentors, set learning goals, and move at a
             pace that works for your schedule.
           </p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-md p-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+        {/* alumni card */}
+        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-md p-8 text-center">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-purple-600 to-indigo-600 my-4">
+            <Users className="h-7 w-7 text-white" />
+          </div>
+
+          <h3 className="text-xl font-semibold text-gray-900 my-3">
             For Alumni
           </h3>
+
           <p className="text-gray-600">
             Give back by mentoring learners, sharing industry experience, and
             helping the next generation grow.
           </p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-md p-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+        {/* learning card */}
+        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-md p-8 text-center">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-purple-600 to-indigo-600 my-4">
+            <LayoutList className="h-7 w-7 text-white" />
+          </div>
+
+          <h3 className="text-xl font-semibold text-gray-900 my-3">
             Structured Learning
           </h3>
+
           <p className="text-gray-600">
             Clear onboarding, preferences-based matching, and dashboards built
             for focus and accountability.
