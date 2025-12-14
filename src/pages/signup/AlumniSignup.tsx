@@ -87,85 +87,89 @@ export default function AlumniSignup({ onNext }: Props) {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 p-6">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-        Alumni Signup
-      </h1>
-      <p className="text-center text-gray-600 mb-6">
-        Create your account to continue
-      </p>
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2 text-center">
+          Alumni Signup
+        </h1>
+        <p className="text-center text-gray-600 mb-6">
+          Create your account to continue
+        </p>
 
-      <form onSubmit={onSubmit} className="space-y-4">
-        <div className="flex flex-col">
-          <label className="mb-1 text-gray-700">Full Name</label>
-          <input
-            value={form.fullName}
-            onChange={onChange("fullName")}
-            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          {errors.fullName && (
-            <p className="text-red-500 mt-1">{errors.fullName}</p>
-          )}
-        </div>
-
-        <div className="flex flex-col">
-          <label className="mb-1 text-gray-700">Email</label>
-          <input
-            value={form.email}
-            onChange={onChange("email")}
-            type="email"
-            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          {errors.email && <p className="text-red-500 mt-1">{errors.email}</p>}
-        </div>
-        <div className="flex flex-col">
-          <label className="mb-1 text-gray-700">Password</label>
-          <div className="relative">
+        <form onSubmit={onSubmit} className="space-y-4">
+          <div className="flex flex-col">
+            <label className="mb-1 text-gray-700">Full Name</label>
             <input
-              value={form.password}
-              onChange={onChange("password")}
-              type={showPw ? "text" : "password"}
-              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              value={form.fullName}
+              onChange={onChange("fullName")}
+              className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-            <button
-              type="button"
-              onClick={() => setShowPw((s) => !s)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
-            >
-              {showPw ? "Hide" : "Show"}
-            </button>
+            {errors.fullName && (
+              <p className="text-red-500 mt-1">{errors.fullName}</p>
+            )}
           </div>
-          {errors.password && (
-            <p className="text-red-500 mt-1">{errors.password}</p>
+
+          <div className="flex flex-col">
+            <label className="mb-1 text-gray-700">Email</label>
+            <input
+              value={form.email}
+              onChange={onChange("email")}
+              type="email"
+              className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            {errors.email && (
+              <p className="text-red-500 mt-1">{errors.email}</p>
+            )}
+          </div>
+          <div className="flex flex-col">
+            <label className="mb-1 text-gray-700">Password</label>
+            <div className="relative">
+              <input
+                value={form.password}
+                onChange={onChange("password")}
+                type={showPw ? "text" : "password"}
+                className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPw((s) => !s)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+              >
+                {showPw ? "Hide" : "Show"}
+              </button>
+            </div>
+            {errors.password && (
+              <p className="text-red-500 mt-1">{errors.password}</p>
+            )}
+          </div>
+
+          <div className="flex flex-col">
+            <label className="mb-1 text-gray-700">Confirm Password</label>
+            <input
+              value={form.confirmPassword}
+              onChange={onChange("confirmPassword")}
+              type={showPw ? "text" : "password"}
+              className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            {errors.confirmPassword && (
+              <p className="text-red-500 mt-1">{errors.confirmPassword}</p>
+            )}
+          </div>
+
+          {/* Button always clickable for demo; validation happens on submit */}
+          <button
+            type="submit"
+            className="w-full bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md"
+          >
+            Next
+          </button>
+
+          {hasErrors && (
+            <p className="text-xs text-gray-500 text-center">
+              Tip: use a real-looking email and an 8+ char password.
+            </p>
           )}
-        </div>
-
-        <div className="flex flex-col">
-          <label className="mb-1 text-gray-700">Confirm Password</label>
-          <input
-            value={form.confirmPassword}
-            onChange={onChange("confirmPassword")}
-            type={showPw ? "text" : "password"}
-            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          {errors.confirmPassword && (
-            <p className="text-red-500 mt-1">{errors.confirmPassword}</p>
-          )}
-        </div>
-
-        {/* Button always clickable for demo; validation happens on submit */}
-        <button
-          type="submit"
-          className="w-full bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md"
-        >
-          Next
-        </button>
-
-        {hasErrors && (
-          <p className="text-xs text-gray-500 text-center">
-            Tip: use a real-looking email and an 8+ char password.
-          </p>
-        )}
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
