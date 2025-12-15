@@ -105,7 +105,7 @@ export default function App() {
   const handlePreferencesSubmit = (preferences: any) => {
     // keep for demo debug
     setRegistration((prev) => ({ ...prev, preferences }));
-    navigate("/dashboard");
+    navigate("/learner/dashboard");
   };
 
   // this runs after alumni preferences and routes to dashboard
@@ -169,12 +169,15 @@ export default function App() {
         />
 
         {/* learner dashboard */}
-        <Route path="/dashboard" element={<Learner username={displayName} />} />
+        <Route
+          path="/learner/dashboard"
+          element={<Learner username={displayName} />}
+        />
 
         {/* alumni dashboard */}
         <Route path="/alumni/dashboard" element={<Alumni />} />
 
-        {/* aadmin dashboard */}
+        {/* admin dashboard */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />

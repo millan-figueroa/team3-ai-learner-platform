@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 
@@ -16,7 +16,7 @@ export default function LandingNav() {
             onClick={() => navigate("/")}
             className="flex items-center gap-2 font-bold text-gray-900"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-indigo-600">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-br from-purple-600 to-indigo-600">
               <Sparkles className="h-5 w-5 text-white" />
             </div>
           </button>
@@ -54,7 +54,7 @@ export default function LandingNav() {
         <div className="relative">
           <button
             onClick={() => setOpen((o) => !o)}
-            className="px-5 py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition"
+            className="px-5 py-2 rounded-lg font-semibold text-white bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition"
           >
             Login
           </button>
@@ -76,7 +76,7 @@ export default function LandingNav() {
               </button>
 
               <button
-                onClick={() => navigate("/admin")}
+                onClick={() => navigate("/admin/dashboard")}
                 className="w-full px-4 py-3 text-left text-sm hover:bg-indigo-50 transition"
               >
                 Admin
