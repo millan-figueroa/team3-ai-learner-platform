@@ -62,7 +62,7 @@ export default function LandingNav() {
           {open && (
             <div className="absolute right-0 mt-3 w-44 rounded-xl bg-white shadow-lg border border-indigo-100 overflow-hidden">
               <button
-                onClick={() => navigate("/dashboard")}
+                onClick={() => navigate("/learner/dashboard")}
                 className="w-full px-4 py-3 text-left text-sm hover:bg-indigo-50 transition"
               >
                 Learner
