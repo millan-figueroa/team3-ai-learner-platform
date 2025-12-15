@@ -75,7 +75,10 @@ src/
 
 ## 👥 Team
 
-**Team 3** - Per Scholas AI Learner Platform
+- **[Jeevitha Pugazhendi](https://github.com/JeevithaPugazh)** 
+- **[Millan Figueroa](https://github.com/millan-figueroa)** 
+- **[Jennifer C.G.](https://github.com/jaycruz718)**
+- **[Vladislav Larionov](https://github.com/vlarionov)**
 
 ---
 
