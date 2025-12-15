@@ -9,7 +9,7 @@
       },
       {
         "key": "mentoring",
-        "label": "My Mentees",
+        "label": "My Learners",
         "icon": "👥"
       },
       {
@@ -29,7 +29,7 @@
       },
       {
         "key": "details",
-        "label": "Tutor Details",
+        "label": "Alumni Details",
         "icon": "🗃️"
       }
     ],
