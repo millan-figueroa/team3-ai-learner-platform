@@ -73,7 +73,7 @@ export default function StudentDash() {
           </p>
 
           <div className="mt-4 text-sm text-gray-500">
-            💡 Example:  
+            💡 Example:
             <br />
             “I don’t understand how `useEffect` dependencies work.”
           </div>
@@ -97,7 +97,7 @@ export default function StudentDash() {
                   <p className="font-medium">{req.topic}</p>
                   <p className="text-sm text-gray-600">{req.details}</p>
                 </div>
-                <span className="text-sm text-blue-600 capitalize">
+                <span className="text-sm text-purple-600 capitalize">
                   {req.status}
                 </span>
               </li>
