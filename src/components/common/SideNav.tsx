@@ -16,7 +16,7 @@ interface NavBarProps {
   onToggleCollapse?: () => void;
 }
 
-const NavBar: React.FC<NavBarProps> = ({
+const SideNav: React.FC<NavBarProps> = ({
   tabs,
   activeTab,
   onTabChange,
@@ -32,39 +32,45 @@ const NavBar: React.FC<NavBarProps> = ({
     >
       {/* Collapse Toggle Button */}
       {onToggleCollapse && (
-        <div className="p-4 border-b border-gray-200">
+        <div className="p-4 border-b border-indigo-200/60">
           <button
             onClick={onToggleCollapse}
-            className="w-full flex items-center justify-center p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+            className="w-full flex items-center justify-center p-2 rounded-lg bg-white/70 hover:bg-white transition"
             title={isCollapsed ? "Expand Navigation" : "Collapse Navigation"}
           >
-            <span className="text-lg">{isCollapsed ? "☰" : "✕"}</span>
+            <span className="text-lg text-slate-700">
+              {isCollapsed ? "☰" : "✕"}
+            </span>
             {!isCollapsed && (
-              <span className="ml-2 text-sm text-gray-600">Collapse</span>
+              <span className="ml-2 text-sm text-slate-600">Collapse</span>
             )}
           </button>
         </div>
       )}
 
-      <nav className="mt-4">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => tab.key && onTabChange(tab.key)}
-            className={`w-full flex items-center px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200 ${
-              activeTab === tab.key
-                ? "bg-blue-50 border-r-4 border-blue-500 text-blue-700 font-medium"
-                : "text-gray-600 hover:text-gray-900"
-            }`}
-            title={isCollapsed ? tab.label : undefined}
-          >
-            <span className="text-lg mr-3">{tab.icon}</span>
-            {!isCollapsed && <span>{tab.label}</span>}
-          </button>
-        ))}
+      <nav className="mt-4 space-y-1">
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab.key;
+
+          return (
+            <button
+              key={tab.id}
+              onClick={() => tab.key && onTabChange(tab.key)}
+              className={`w-full flex items-center px-6 py-3 text-left rounded-r-xl transition ${
+                isActive
+                  ? "bg-purple-200/70 text-purple-900 font-semibold"
+                  : "text-slate-700 hover:bg-purple-100/60 hover:text-purple-900"
+              }`}
+              title={isCollapsed ? tab.label : undefined}
+            >
+              <span className="text-lg mr-3">{tab.icon}</span>
+              {!isCollapsed && <span>{tab.label}</span>}
+            </button>
+          );
+        })}
       </nav>
     </div>
   );
 };
 
-export default NavBar;
+export default SideNav;
