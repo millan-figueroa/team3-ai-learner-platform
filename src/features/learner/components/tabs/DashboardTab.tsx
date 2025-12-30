@@ -7,7 +7,7 @@ type HelpRequest = {
   status: "open" | "matched" | "closed";
 };
 
-export default function StudentDash() {
+export default function DashboardTab() {
   const [topic, setTopic] = useState("");
   const [details, setDetails] = useState("");
   const [requests, setRequests] = useState<HelpRequest[]>([]);
@@ -59,7 +59,7 @@ export default function StudentDash() {
 
           <button
             onClick={submitRequest}
-            className="bg-linear-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
+            className="bg-linear-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
           >
             Submit Request
           </button>

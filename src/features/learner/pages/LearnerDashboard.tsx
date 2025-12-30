@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import NavBar from "../../components/common/SideNav";
-import navigationConfig from "../../data/navigationConfig.json";
+import SideNav from "../../../components/common/SideNav";
+import navigationConfig from "../../../data/navigationConfig.json";
 
-import LearnerDash from "./LearnersTab/HelpRequest";
-import Help from "../../pages/Learner/LearnersTab/Help";
-import LearnerSchedule from "./LearnersTab/LearnerSchedule";
-import LearnerProfile from "./LearnersTab/LearnerProfile";
-import Resources from "./LearnersTab/Resources";
-import LearnerHeader from "./LearnerHeader";
-import AIChatAssistant from "../../components/common/AIChatAssistant";
-import { LearnerDetails } from "./LearnersTab/LearnerDetails";
+import DashboardTab from "../../mentor/components/tabs/DashboardTab";
+import Help from "../components/tabs/HelpTab";
+import LearnerSchedule from "../components/tabs/ScheduleTab";
+import LearnerProfile from "../components/tabs/ProfileTab";
+import Resources from "../components/tabs/ResourcesTab";
+import LearnerHeader from "../components/LearnerHeader";
+import AIChatAssistant from "../../../components/common/AIChatAssistant";
+import { LearnerDetails } from "../components/tabs/DetailsTab";
 
-import { testStudent1 } from "../../components/types/user-types";
+import { testStudent1 } from "../../../components/types/user-types";
 
 interface LearnerProps {
   username?: string;
 }
 
-const Learner: React.FC<LearnerProps> = ({ username }) => {
+const LearnerDashboard: React.FC<LearnerProps> = ({ username }) => {
   const [activeTab, setActiveTab] = useState(
     navigationConfig.learner.defaultTab
   );
@@ -26,7 +26,7 @@ const Learner: React.FC<LearnerProps> = ({ username }) => {
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
-        return <LearnerDash />;
+        return <DashboardTab />;
       case "help":
         return <Help />;
       case "schedule":
@@ -56,7 +56,7 @@ const Learner: React.FC<LearnerProps> = ({ username }) => {
 
       {/* Layout */}
       <div className="flex w-full">
-        <NavBar
+        <SideNav
           tabs={navigationConfig.learner.tabs}
           activeTab={activeTab}
           onTabChange={setActiveTab}
@@ -65,7 +65,7 @@ const Learner: React.FC<LearnerProps> = ({ username }) => {
         />
 
         {/* Main Content */}
-        < div className ="flex flex-row">
+        <div className="flex flex-row">
           <div className="flex-1 w-full p-6">{renderContent()}</div>
 
           <div className="lg:col-span-1">
@@ -79,4 +79,4 @@ const Learner: React.FC<LearnerProps> = ({ username }) => {
   );
 };
 
-export default Learner;
+export default LearnerDashboard;

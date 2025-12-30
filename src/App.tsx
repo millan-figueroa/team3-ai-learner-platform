@@ -2,7 +2,7 @@ import "./index.css";
 import { useEffect, useMemo, useState } from "react";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import Learner from "./pages/Learner/learner";
+import LearnerDashboard from "./features/learner/pages/LearnerDashboard";
 import LearnerSignup, {
   type LearnerSignupForm,
 } from "./pages/signup/LearnerSignup";
@@ -24,8 +24,8 @@ type Registration = {
   preferences?: any;
 };
 
-// this is separate storage for alumni signup flow
-const MENTOR_STORAGE_KEY = "alumni-registration";
+// this is separate storage for mentor signup flow
+const MENTOR_STORAGE_KEY = "mentor-registration";
 
 const loadRegistration = (): Registration => {
   try {
@@ -166,7 +166,7 @@ export default function App() {
         {/* learner dashboard */}
         <Route
           path="/learner/dashboard"
-          element={<Learner username={displayName} />}
+          element={<LearnerDashboard username={displayName} />}
         />
 
         {/* mentor dashboard */}
