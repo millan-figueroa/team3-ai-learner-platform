@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import type { AlumniSignupForm } from "./AlumniSignup";
+import type { MentorSignupForm } from "./MentorSignup";
 
 type Preferences = {
   subject: string;
@@ -9,11 +9,11 @@ type Preferences = {
 };
 
 interface Props {
-  alumniData: AlumniSignupForm;
+  mentorData: MentorSignupForm;
   onNext: (preferences: any) => void; // keeping your existing signature for speed/demo
 }
 
-const AlumniPreferences: React.FC<Props> = ({ alumniData, onNext }) => {
+const MentorPreferences: React.FC<Props> = ({ mentorData, onNext }) => {
   const [prefs, setPrefs] = useState<Preferences>({
     subject: "",
     experience: "",
@@ -35,7 +35,7 @@ const AlumniPreferences: React.FC<Props> = ({ alumniData, onNext }) => {
   const handleContinue = () => {
     // save answers in the same object (account + preferences)
     onNext({
-      ...alumniData,
+      ...mentorData,
       preferences: prefs,
     });
   };
@@ -44,7 +44,7 @@ const AlumniPreferences: React.FC<Props> = ({ alumniData, onNext }) => {
     <div className="min-h-screen bg-linear-to-r from-blue-50 to-indigo-100 flex items-center justify-center p-6">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-          Alumni Preferences
+          Mentor Preferences
         </h1>
 
         <p className="mb-4 text-gray-600 text-center">
@@ -132,7 +132,7 @@ const AlumniPreferences: React.FC<Props> = ({ alumniData, onNext }) => {
               Preview saved object (demo)
             </summary>
             <pre className="bg-gray-100 p-4 rounded-lg mt-2 overflow-x-auto text-xs">
-              {JSON.stringify({ ...alumniData, preferences: prefs }, null, 2)}
+              {JSON.stringify({ ...mentorData, preferences: prefs }, null, 2)}
             </pre>
           </details>
 
@@ -150,4 +150,4 @@ const AlumniPreferences: React.FC<Props> = ({ alumniData, onNext }) => {
   );
 };
 
-export default AlumniPreferences;
+export default MentorPreferences;

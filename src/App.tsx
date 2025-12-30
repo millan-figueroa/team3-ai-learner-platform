@@ -7,13 +7,14 @@ import LearnerSignup, {
   type LearnerSignupForm,
 } from "./pages/signup/LearnerSignup";
 import LearnerPreferences from "./pages/signup/LearnerPreferences";
-import Alumni from "./pages/Mentor";
-import AlumniSignup, {
-  type AlumniSignupForm,
-} from "./pages/signup/AlumniSignup";
-import AlumniPreferences from "./pages/signup/AlumniPreferences";
+import Mentor from "./pages/Mentor";
+import MentorSignup, {
+  type MentorSignupForm,
+} from "./pages/signup/MentorSignup";
+import MentorPreferences from "./pages/signup/MentorPreferences";
 
 import AdminDashboard from "./pages/Admin_page/admin";
+import type { MentorRegistration } from "./shared/types/registration";
 
 const STORAGE_KEY = "learner-registration";
 
@@ -24,13 +25,7 @@ type Registration = {
 };
 
 // this is separate storage for alumni signup flow
-const ALUMNI_STORAGE_KEY = "alumni-registration";
-
-type AlumniRegistration = {
-  account?: AlumniSignupForm;
-  // not saving preferences for demo, but we can still store them
-  preferences?: any;
-};
+const MENTOR_STORAGE_KEY = "alumni-registration";
 
 const loadRegistration = (): Registration => {
   try {
@@ -45,19 +40,19 @@ const persistRegistration = (data: Registration) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 };
 
-// this loads saved alumni signup data (optional, for demo consistency)
-const loadAlumniRegistration = (): AlumniRegistration => {
+// this loads saved mentor signup data (optional, for demo consistency)
+const loadMentorRegistration = (): MentorRegistration => {
   try {
-    const stored = localStorage.getItem(ALUMNI_STORAGE_KEY);
-    return stored ? (JSON.parse(stored) as AlumniRegistration) : {};
+    const stored = localStorage.getItem(MENTOR_STORAGE_KEY);
+    return stored ? (JSON.parse(stored) as MentorRegistration) : {};
   } catch {
     return {};
   }
 };
 
-// this saves alumni signup data (optional, for demo consistency)
-const persistAlumniRegistration = (data: AlumniRegistration) => {
-  localStorage.setItem(ALUMNI_STORAGE_KEY, JSON.stringify(data));
+// this saves mentor signup data (optional, for demo consistency)
+const persistMentorRegistration = (data: MentorRegistration) => {
+  localStorage.setItem(MENTOR_STORAGE_KEY, JSON.stringify(data));
 };
 
 export default function App() {
@@ -68,19 +63,19 @@ export default function App() {
     loadRegistration()
   );
 
-  // this state stores alumni signup progress
-  const [alumniRegistration, setAlumniRegistration] =
-    useState<AlumniRegistration>(() => loadAlumniRegistration());
+  // this state stores mentor signup progress
+  const [mentorRegistration, setMentorRegistration] =
+    useState<MentorRegistration>(() => loadMentorRegistration());
 
   // this keeps learner data in localstorage so refresh does not wipe it
   useEffect(() => {
     persistRegistration(registration);
   }, [registration]);
 
-  // this keeps alumni data in localstorage so refresh does not wipe it
+  // this keeps mentor data in localstorage so refresh does not wipe it
   useEffect(() => {
-    persistAlumniRegistration(alumniRegistration);
-  }, [alumniRegistration]);
+    persistMentorRegistration(mentorRegistration);
+  }, [mentorRegistration]);
 
   // this is used to show a name on the dashboard (optional)
   const displayName = useMemo(() => {
@@ -94,10 +89,10 @@ export default function App() {
     navigate("/signup/preferences");
   };
 
-  // this runs after alumni signup step 1 and routes to alumni preferences
-  const handleAlumniAccountSubmit = (data: AlumniSignupForm) => {
-    setAlumniRegistration((prev) => ({ ...prev, account: data }));
-    navigate("/alumni/preferences");
+  // this runs after mentor signup step 1 and routes to mentor preferences
+  const handleMentorAccountSubmit = (data: MentorSignupForm) => {
+    setMentorRegistration((prev) => ({ ...prev, account: data }));
+    navigate("/mentor/preferences");
   };
 
   // matches LearnerPreferences: onNext(preferences: any)
@@ -108,11 +103,11 @@ export default function App() {
     navigate("/learner/dashboard");
   };
 
-  // this runs after alumni preferences and routes to dashboard
+  // this runs after mentor preferences and routes to dashboard
   // for demo, we store preferences but you can remove it later
-  const handleAlumniPreferencesSubmit = (preferences: any) => {
-    setAlumniRegistration((prev) => ({ ...prev, preferences }));
-    navigate("/alumni/dashboard");
+  const handleMentorPreferencesSubmit = (preferences: any) => {
+    setMentorRegistration((prev) => ({ ...prev, preferences }));
+    navigate("/mentor/dashboard");
   };
 
   return (
@@ -145,25 +140,25 @@ export default function App() {
           }
         />
 
-        {/* alumni signup step 1 */}
+        {/* mentor signup step 1 */}
         <Route
-          path="/alumni/account"
-          element={<AlumniSignup onNext={handleAlumniAccountSubmit} />}
+          path="/mentor/account"
+          element={<MentorSignup onNext={handleMentorAccountSubmit} />}
         />
 
-        {/* alumni preferences step (guarded so users cannot skip step 1) */}
+        {/* mentor preferences step (guarded so users cannot skip step 1) */}
         <Route
-          path="/alumni/preferences"
+          path="/mentor/preferences"
           element={
-            alumniRegistration.account ? (
+            mentorRegistration.account ? (
               // reusing the learner preferences page for demo
               // it collects dropdowns and returns a preferences object on next
-              <AlumniPreferences
-                alumniData={alumniRegistration.account}
-                onNext={handleAlumniPreferencesSubmit}
+              <MentorPreferences
+                mentorData={mentorRegistration.account}
+                onNext={handleMentorPreferencesSubmit}
               />
             ) : (
-              <Navigate to="/alumni/account" replace />
+              <Navigate to="/mentor/account" replace />
             )
           }
         />
@@ -174,8 +169,8 @@ export default function App() {
           element={<Learner username={displayName} />}
         />
 
-        {/* alumni dashboard */}
-        <Route path="/alumni/dashboard" element={<Alumni />} />
+        {/* mentor dashboard */}
+        <Route path="/mentor/dashboard" element={<Mentor />} />
 
         {/* admin dashboard */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />

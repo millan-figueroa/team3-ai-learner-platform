@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 
-// this type describes the shape of the Alumni signup form data
-export type AlumniSignupForm = {
+// this type describes the shape of the Mentor signup form data
+export type MentorSignupForm = {
   fullName: string;
   email: string;
   password: string;
@@ -12,16 +12,16 @@ export type AlumniSignupForm = {
 // onnext is a function passed down from app.tsx
 // it tells the app when this step is finished
 interface Props {
-  onNext: (data: AlumniSignupForm) => void;
+  onNext: (data: MentorSignupForm) => void;
 }
 
-// defines an object type where each field from AlumniSignupForm can optionally have a string error message associated with it.
-type FieldErrors = Partial<Record<keyof AlumniSignupForm, string>>;
+// defines an object type where each field from MentorSignupForm can optionally have a string error message associated with it.
+type FieldErrors = Partial<Record<keyof MentorSignupForm, string>>;
 
-// this component renders the alumni signup form
-export default function AlumniSignup({ onNext }: Props) {
+// this component renders the Mentor signup form
+export default function MentorSignup({ onNext }: Props) {
   // local state to store what the user types into the form
-  const [form, setForm] = useState<AlumniSignupForm>({
+  const [form, setForm] = useState<MentorSignupForm>({
     fullName: "",
     email: "",
     password: "",
@@ -36,7 +36,7 @@ export default function AlumniSignup({ onNext }: Props) {
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
   // this function checks the form and returns any errors
-  const validate = (data: AlumniSignupForm): FieldErrors => {
+  const validate = (data: MentorSignupForm): FieldErrors => {
     const next: FieldErrors = {};
 
     if (!data.fullName.trim()) next.fullName = "Full name is required.";
@@ -63,7 +63,7 @@ export default function AlumniSignup({ onNext }: Props) {
 
   // this updates form state whenever the user types
   const onChange =
-    (key: keyof AlumniSignupForm) =>
+    (key: keyof MentorSignupForm) =>
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setForm((prev) => ({ ...prev, [key]: e.target.value }));
       setErrors((prev) => ({ ...prev, [key]: undefined }));
@@ -81,7 +81,7 @@ export default function AlumniSignup({ onNext }: Props) {
     if (Object.keys(validationErrors).length > 0) return;
 
     // if everything is valid, send the data to the parent
-    // app.tsx will handle navigation to alumni preferences
+    // app.tsx will handle navigation to mentor preferences
     onNext(form);
   };
 
@@ -89,7 +89,7 @@ export default function AlumniSignup({ onNext }: Props) {
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 p-6">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-          Alumni Signup
+          Mentor Signup
         </h1>
         <p className="text-center text-gray-600 mb-6">
           Create your account to continue
