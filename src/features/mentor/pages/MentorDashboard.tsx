@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MentorHeader from "../components/MentorHeader";
-import NavBar from "../../../components/common/SideNav";
+import NavBar from "../../../shared/components/SideNav";
 // import type { Tab } from "../../components/common/types";
 import DashboardTab from "../components/tabs/DashboardTab";
 import MentoringTab from "../components/tabs/MentoringTab";
@@ -10,7 +10,7 @@ import ProfileTab from "../components/tabs/ProfileTab";
 import navigationConfig from "../../../data/navigationConfig.json";
 import { TutorProfile } from "../components/MentorDetails";
 
-import { testTutor1 } from "../../../components/types/user-types";
+import { testTutor1 } from "../../../shared/types/user-types";
 
 interface MentorProps {
   username?: string;

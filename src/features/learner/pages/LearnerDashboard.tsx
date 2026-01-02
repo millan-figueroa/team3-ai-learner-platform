@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SideNav from "../../../components/common/SideNav";
+import SideNav from "../../../shared/components/SideNav";
 import navigationConfig from "../../../data/navigationConfig.json";
 
 import DashboardTab from "../../mentor/components/tabs/DashboardTab";
@@ -8,10 +8,10 @@ import LearnerSchedule from "../components/tabs/ScheduleTab";
 import LearnerProfile from "../components/tabs/ProfileTab";
 import Resources from "../components/tabs/ResourcesTab";
 import LearnerHeader from "../components/LearnerHeader";
-import AIChatAssistant from "../../../components/common/AIChatAssistant";
+import AIChatAssistant from "../components/AIChatAssistant";
 import { LearnerDetails } from "../components/tabs/DetailsTab";
 
-import { testStudent1 } from "../../../components/types/user-types";
+import { testStudent1 } from "../../../shared/types/user-types";
 
 interface LearnerProps {
   username?: string;
