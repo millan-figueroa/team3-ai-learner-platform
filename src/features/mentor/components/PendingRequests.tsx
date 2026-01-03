@@ -11,9 +11,8 @@ const PendingRequests: React.FC = () => {
   const requests: MentorshipRequest[] = [
     {
       id: 1,
-      name: "Sarah Chen",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b96b3e16?w=40&h=40&fit=crop&crop=face",
+      name: "Ali Mammadli",
+      image: "/profile-ali-mammadli.jpg",
       description: "Needs help with React & Node.js",
     },
     {

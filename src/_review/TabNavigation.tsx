@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Tab {
   key: string;
@@ -11,13 +11,16 @@ interface TabNavigationProps {
   onTabChange: (tabKey: string) => void;
 }
 
-const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, onTabChange }) => {
+const TabNavigation: React.FC<TabNavigationProps> = ({
+  activeTab,
+  onTabChange,
+}) => {
   const tabs: Tab[] = [
-    { key: 'dashboard', label: 'Dashboard', icon: '🏠' },
-    { key: 'mentoring', label: 'My Mentees', icon: '👥' },
-    { key: 'schedule', label: 'Schedule', icon: '📅' },
-    { key: 'resources', label: 'Resources', icon: '📚' },
-    { key: 'profile', label: 'Profile', icon: '⚙️' }
+    { key: "dashboard", label: "Dashboard", icon: "🏠" },
+    { key: "mentoring", label: "My Mentees", icon: "👥" },
+    { key: "schedule", label: "Schedule", icon: "📅" },
+    { key: "resources", label: "Resources", icon: "📚" },
+    { key: "profile", label: "Profile", icon: "⚙️" },
   ];
 
   return (
@@ -30,8 +33,8 @@ const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, onTabChange })
               onClick={() => onTabChange(tab.key)}
               className={`py-4 px-1 border-b-2 font-medium text-sm ${
                 activeTab === tab.key
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  ? "border-purple-500 text-purple-600"
+                  : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
               }`}
             >
               <span className="mr-2">{tab.icon}</span>

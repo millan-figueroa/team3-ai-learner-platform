@@ -26,9 +26,9 @@ export default function LandingPage() {
           </h1>
 
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            A community-driven learning platform connecting learners with
-            alumnimentors through AI-powered assistance, intelligent matching,
-            and structured, real-world guidance.
+            A community-driven learning platform connecting learners with alumni
+            mentors through AI-powered assistance, intelligent matching, and
+            structured, real-world guidance.
           </p>
 
           {/* primary ctas */}
@@ -41,10 +41,10 @@ export default function LandingPage() {
             </button>
 
             <button
-              onClick={() => navigate("/alumni/account")}
+              onClick={() => navigate("/mentor/account")}
               className="px-8 py-4 rounded-xl text-lg font-semibold text-indigo-700 bg-white border border-indigo-200 hover:bg-indigo-50 transition"
             >
-              Register as an Alumni
+              Register as a Mentor
             </button>
           </div>
         </div>
@@ -71,14 +71,14 @@ export default function LandingPage() {
           </p>
         </div>
 
-        {/* alumni card */}
+        {/* mentor card */}
         <div className="bg-white/90 backdrop-blur rounded-2xl shadow-md p-8 text-center">
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-purple-600 to-indigo-600 my-4">
             <Users className="h-7 w-7 text-white" />
           </div>
 
           <h3 className="text-xl font-semibold text-gray-900 my-3">
-            For Alumni
+            For Mentors
           </h3>
 
           <p className="text-gray-600">

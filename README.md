@@ -8,7 +8,7 @@ An AI-powered tutoring platform connecting learners with alumni mentors through 
 
 ## 🚀 Features
 
-- **Study Assistant** - Real-time chat support across all pages  
+- **Study Assistant** - Real-time chat support across all pages
 - **Resource Sharing** - Learning materials assigned by tutors
 - **Session Scheduling** - Integrated calendar system
 - **Progress Tracking** - Analytics for students and tutors
@@ -16,6 +16,7 @@ An AI-powered tutoring platform connecting learners with alumni mentors through 
 ## 🎯 User Roles
 
 ### 👨‍🎓 Students
+
 - Submit help requests by topic
 - Access AI study assistant
 - View assigned resources
@@ -23,22 +24,24 @@ An AI-powered tutoring platform connecting learners with alumni mentors through 
 
 ![Student Dashboard](./public/Learner.png)
 
-### 🎓 Alumni (Tutors)
+### 🎓 Mentors (Tutors)
+
 - Review mentorship requests
 - Manage current students
 - Assign learning resources
 - Track student progress
 - Schedule tutoring sessions
 
-![Alumni Dashboard](./public/Alumni.png)
+![Mentor Dashboard](./public/Mentor.png)
 
 ### 👨‍💼 Administrators
+
 - Oversee platform users
 - Monitor tutoring sessions
 - Manage user registrations
 - View platform analytics
 
-![Admin Dashboard](./public/Screenshot%202025-12-14%20235830.png)
+![Admin Dashboard](./public/Admin.png)
 
 ## 🛠 Tech Stack
 
@@ -75,11 +78,11 @@ src/
 
 ## 👥 Team
 
-- **[Jeevitha Pugazhendi](https://github.com/JeevithaPugazh)** 
-- **[Millan Figueroa](https://github.com/millan-figueroa)** 
+- **[Jeevitha Pugazhendi](https://github.com/JeevithaPugazh)**
+- **[Millan Figueroa](https://github.com/millan-figueroa)**
 - **[Jennifer C.G.](https://github.com/jaycruz718)**
 - **[Vladislav Larionov](https://github.com/vlarionov)**
 
 ---
 
-*Built for Per Scholas Hackathon 2025*
+_Built for Per Scholas Hackathon 2025_

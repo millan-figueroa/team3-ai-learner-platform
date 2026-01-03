@@ -21,7 +21,7 @@ const MentorHeader: React.FC<MentorHeaderProps> = ({
           <div className="flex items-center gap-3">
             {/* logo placeholder */}
             <div className="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center text-white font-bold">
-              A
+              M
             </div>
             <h1 className="text-lg font-semibold text-white tracking-wide">
               Mentor Dashboard

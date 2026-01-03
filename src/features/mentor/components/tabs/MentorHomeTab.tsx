@@ -1,7 +1,7 @@
 import React from "react";
-import StatsGrid from "./StatsGrid";
-import PendingRequests from "./PendingRequests";
-import TodaySessions from "./TodaySessions";
+import StatsGrid from "../StatsGrid";
+import PendingRequests from "../PendingRequests";
+import TodaySessions from "../TodaySessions";
 
 const MentorHome: React.FC = () => {
   return (

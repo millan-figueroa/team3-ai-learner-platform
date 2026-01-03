@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import SideNav from "../../../components/common/SideNav";
 import navigationConfig from "../../../data/navigationConfig.json";
-import LearnerHome from "../components/tabs/LearnerHome";
-// import DashboardTab from "../../mentor/components/tabs/DashboardTab";
+import LearnerHome from "../components/tabs/LearnerHomeTab";
 import Help from "../components/tabs/HelpTab";
 import LearnerSchedule from "../components/tabs/ScheduleTab";
 import LearnerProfile from "../components/tabs/ProfileTab";
