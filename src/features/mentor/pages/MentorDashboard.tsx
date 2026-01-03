@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MentorHeader from "../components/MentorHeader";
-import NavBar from "../../../components/common/SideNav";
+import SideNav from "../../../components/SideNav";
+// import type { Tab } from "../../components/common/types";
 import MentorHome from "../components/tabs/MentorHomeTab";
 import MentoringTab from "../components/tabs/MyLearnersTab";
 import ScheduleTab from "../components/tabs/ScheduleTab";
@@ -60,7 +61,7 @@ const Mentor: React.FC<MentorProps> = ({ username }) => {
       {/* Main Layout with NavBar */}
       <div className="flex w-full">
         {/* Collapsible NavBar Component */}
-        <NavBar
+        <SideNav
           tabs={navigationConfig.mentor.tabs}
           activeTab={activeTab}
           onTabChange={setActiveTab}
