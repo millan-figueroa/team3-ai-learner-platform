@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import SideNav from "../../../shared/components/SideNav";
 import navigationConfig from "../../../data/navigationConfig.json";
-
-import DashboardTab from "../../mentor/components/tabs/DashboardTab";
+import LearnerHome from "../components/tabs/LearnerHomeTab";
 import Help from "../components/tabs/HelpTab";
 import LearnerSchedule from "../components/tabs/ScheduleTab";
 import LearnerProfile from "../components/tabs/ProfileTab";
@@ -26,7 +25,7 @@ const LearnerDashboard: React.FC<LearnerProps> = ({ username }) => {
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
-        return <DashboardTab />;
+        return <LearnerHome />;
       case "help":
         return <Help />;
       case "schedule":

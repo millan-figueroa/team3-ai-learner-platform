@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import MentorHeader from "../components/MentorHeader";
-import NavBar from "../../../shared/components/SideNav";
+import SideNav from "../../../shared/components/SideNav";
 // import type { Tab } from "../../components/common/types";
-import DashboardTab from "../components/tabs/DashboardTab";
-import MentoringTab from "../components/tabs/MentoringTab";
+import MentorHome from "../components/tabs/MentorHomeTab";
+import MentoringTab from "../components/tabs/MyLearnersTab";
 import ScheduleTab from "../components/tabs/ScheduleTab";
 import ResourcesTab from "../components/tabs/ResourcesTab";
 import ProfileTab from "../components/tabs/ProfileTab";
 import navigationConfig from "../../../data/navigationConfig.json";
-import { TutorProfile } from "../components/MentorDetails";
-
+import { TutorProfile } from "../components/tabs/MentorDetailsTab";
 import { testTutor1 } from "../../../shared/types/user-types";
 
 interface MentorProps {
@@ -31,7 +30,7 @@ const Mentor: React.FC<MentorProps> = ({ username }) => {
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
-        return <DashboardTab />;
+        return <MentorHome />;
       case "mentoring":
         return <MentoringTab />;
       case "schedule":
@@ -62,7 +61,7 @@ const Mentor: React.FC<MentorProps> = ({ username }) => {
       {/* Main Layout with NavBar */}
       <div className="flex w-full">
         {/* Collapsible NavBar Component */}
-        <NavBar
+        <SideNav
           tabs={navigationConfig.mentor.tabs}
           activeTab={activeTab}
           onTabChange={setActiveTab}

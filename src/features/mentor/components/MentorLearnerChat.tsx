@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Learner } from "../../../../shared/types/entities";
+import type { Learner } from "../../../shared/types/entities";
 
 interface Message {
   id: number;
@@ -10,13 +10,13 @@ interface Message {
   type: "text" | "file" | "meeting";
 }
 
-interface CommunicationHubProps {
+interface MentorLearnerChatProps {
   learner: Learner;
   isOpen: boolean;
   onClose: () => void;
 }
 
-const CommunicationHub: React.FC<CommunicationHubProps> = ({
+const MentorLearnerChat: React.FC<MentorLearnerChatProps> = ({
   learner,
   isOpen,
   onClose,
@@ -188,4 +188,4 @@ const CommunicationHub: React.FC<CommunicationHubProps> = ({
   );
 };
 
-export default CommunicationHub;
+export default MentorLearnerChat;

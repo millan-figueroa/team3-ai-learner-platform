@@ -7,7 +7,7 @@ import LearnerSignup, {
   type LearnerSignupForm,
 } from "./pages/signup/LearnerSignup";
 import LearnerPreferences from "./pages/signup/LearnerPreferences";
-import Mentor from "./features/mentor/pages";
+import Mentor from "./shared/types";
 import MentorSignup, {
   type MentorSignupForm,
 } from "./pages/signup/MentorSignup";
