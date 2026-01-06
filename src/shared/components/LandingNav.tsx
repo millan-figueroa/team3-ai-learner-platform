@@ -23,8 +23,8 @@ export default function LandingNav() {
 
           {/* primary nav */}
           <nav className="hidden md:flex items-center gap-6">
-            <span className="text-sm font-bold tracking-wide text-indigo-700">
-              PEERTRACK+
+            <span className="text-sm border-blue-500 font-bold tracking-wide text-indigo-700">
+              PatchWrk
             </span>
             <button
               onClick={() => navigate("/")}

@@ -1,88 +1,161 @@
-# Team 3 AI Learner Platform
+# PatchWrk v1 – Feature TODO
 
-## Overview
+## Learner Dashboard (v1)
 
-An AI-powered tutoring platform connecting learners with alumni mentors through intelligent matching and real-time support.
+- [ ] Progress snapshot
 
-![Platform Overview](./public/Landing.png)
+- [ ] Sessions completed
 
-## 🚀 Features
+- [ ] Active mentor(s)
 
-- **Study Assistant** - Real-time chat support across all pages
-- **Resource Sharing** - Learning materials assigned by tutors
-- **Session Scheduling** - Integrated calendar system
-- **Progress Tracking** - Analytics for students and tutors
+- [ ] Next session
 
-## 🎯 User Roles
+- [ ] Streak (pause-friendly)
 
-### 👨‍🎓 Students
+- [ ] This week
 
-- Submit help requests by topic
-- Access AI study assistant
-- View assigned resources
-- Manage schedule and profile
+- [ ] Upcoming session list
 
-![Student Dashboard](./public/Learner.png)
+- [ ] Prep checklist per session
 
-### 🎓 Mentors (Tutors)
+- [ ] Session memory
 
-- Review mentorship requests
-- Manage current students
-- Assign learning resources
-- Track student progress
-- Schedule tutoring sessions
+- [ ] Last session recap
 
-![Mentor Dashboard](./public/Mentor.png)
+- [ ] Top 3 next steps
 
-### 👨‍💼 Administrators
+- [ ] Circles preview
 
-- Oversee platform users
-- Monitor tutoring sessions
-- Manage user registrations
-- View platform analytics
+- [ ] Latest 2–3 posts
 
-![Admin Dashboard](./public/Admin.png)
+- [ ] Weekly check-in prompt
 
-## 🛠 Tech Stack
+- [ ] Saved items
 
-- **React + TypeScript**
-- **Tailwind CSS**
-- **Vite**
-- **React Router**
+- [ ] Bookmarked opportunities
 
-## 🚀 Quick Start
+- [ ] Bookmarked resources
 
-```bash
-# Clone the repo
-git clone https://github.com/millan-figueroa/team3-ai-learner-platform.git
+## Mentor Dashboard (v1)
 
-# Install dependencies
-cd team3-ai-learner-platform
-npm install
+- [ ] Snapshot
 
-# Start development server
-npm run dev
-```
+- [ ] Active mentees count
 
-Open `http://localhost:5173` to view the app.
+- [ ] Upcoming sessions
 
-## 📁 Structure
+- [ ] Open help requests
 
-```
-src/
-├── components/     # Reusable UI components
-├── pages/         # Main application pages
-├── data/          # Static data and config
-└── assets/        # Images and static files
-```
+- [ ] Response streak
 
-## 👥 Team
+- [ ] Today / This week
 
-- **[Jeevitha Pugazhendi](https://github.com/JeevithaPugazh)**
-- **[Millan Figueroa](https://github.com/millan-figueroa)**
-- **[Jennifer C.G.](https://github.com/jaycruz718)**
-- **[Vladislav Larionov](https://github.com/vlarionov)**
+- [ ] Sessions list
 
----
+- [ ] Quick notes link per session
 
-_Built for Per Scholas Hackathon 2025_
+- [ ] Requests queue
+
+- [ ] Learner help requests
+
+- [ ] Topic, urgency, tags
+
+- [ ] Your learners
+
+- [ ] Mini learner cards
+
+- [ ] Goals
+
+- [ ] Last session
+
+- [ ] Next step
+
+- [ ] Circle activity (optional)
+
+- [ ] Posts needing mentor input
+
+## Admin Dashboard (v1)
+
+- [ ] Moderation
+
+- [ ] Flagged posts
+
+- [ ] Flagged resources
+
+- [ ] Flagged aid requests
+
+- [ ] Matching
+
+- [ ] Open learner requests
+
+- [ ] Available mentors
+
+- [ ] Manual assignment flow
+
+- [ ] Platform health metrics
+
+- [ ] Active users (weekly)
+
+- [ ] Sessions scheduled
+
+- [ ] Circle activity
+
+- [ ] Resource curation
+
+- [ ] Pin / feature resources
+
+- [ ] Approve opportunities
+
+- [ ] Common Pages (All Roles)
+
+- [ ] Opportunities board
+
+- [ ] Conferences
+
+- [ ] Meetups
+
+- [ ] Scholarships / internships
+
+- [ ] Resources + Mutual Aid
+
+- [ ] Resource library
+
+- [ ] Mutual aid requests / offers
+
+- [ ] Circles
+
+- [ ] Create / join circles
+
+- [ ] Posts + comments
+
+- [ ] Profile + Settings
+
+- [ ] Pronouns
+
+- [ ] Access needs
+
+- [ ] Boundaries / availability
+
+## AI Features (v1 – Assistive Only)
+
+### Learner
+
+- [ ] Summarize last session → next steps
+
+### Mentor
+
+- [ ] Notes → follow-up mess
+
+### Admin
+
+- [ ] Auto-tag posts
+
+- [ ] Detect duplicate resources / opportunities
+
+## Notes
+
+- No automation without user confirmation
+
+- No ranking or identity inference
+
+- Care > speed
