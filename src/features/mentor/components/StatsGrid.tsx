@@ -91,9 +91,9 @@ const StatsGrid: React.FC = () => {
           key={index}
           className="bg-white p-6 rounded-lg shadow-sm border border-gray-200"
         >
-          <div className="flex items-center">
+          <div className="flex flex-col items-center text-center gap-3 md:flex-row md:items-center md:text-left">
             <div className={`p-3 ${stat.bgColor} rounded-lg`}>{stat.icon}</div>
-            <div className="ml-4">
+            <div className="md:ml-4">
               <p className="text-sm font-medium text-gray-600">{stat.title}</p>
               <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
             </div>

@@ -3,6 +3,7 @@ import SideNav from "../../../shared/components/SideNav";
 import navigationConfig from "../../../data/navigationConfig.json";
 import LearnerHeader from "../components/LearnerHeader";
 // import AIChatAssistant from "../components/AIChatAssistant";
+import ProgressSnapshot from "../components/Snapshot";
 
 export default function LearnerDashboard({ username }: { username?: string }) {
   const [activeTab, setActiveTab] = useState(
@@ -26,7 +27,7 @@ export default function LearnerDashboard({ username }: { username?: string }) {
         <main className="flex-1 p-6">
           {/* TODO: render tab content here (DashboardTab, HelpTab, etc.) */}
           <div className="bg-white rounded-xl shadow p-6">
-            Learner dashboard shell is wired.
+            <ProgressSnapshot />
           </div>
         </main>
       </div>
